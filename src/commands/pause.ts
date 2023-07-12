@@ -12,7 +12,7 @@ async function execute(interaction: CommandInteraction, client: CustomClient) {
   const voiceState = interaction.guild.voiceStates.cache.get(userId);
   const memberVoiceChannel = voiceState?.channel;
 
-  return await interaction.reply("Esse comando ainda não está disponível. Por favor, use o comando play caso queria trocar de musica.");
+  return await interaction.reply("Esse comando ainda não está disponível. Por favor, use o comando play caso queria trocar de musica ou desconecte o bot caso querira para-lo.");
   if (!memberVoiceChannel) {
     return interaction.reply("Você precisa estar conectado a um canal de voz para usar este comando.");
   }

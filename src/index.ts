@@ -5,7 +5,7 @@ import { CustomClient, CustomCommand } from './custom';
 import { deployCommands } from './deploy-commands';
 
 const commandsPath = path.join(__dirname, 'commands');
-const commandFiles = fs.readdirSync(commandsPath).filter(file  => file.endsWith(".ts"));
+const commandFiles = fs.readdirSync(commandsPath);
 
 const { TOKEN }= process.env
 
@@ -33,13 +33,16 @@ client.login(TOKEN);
 client.on(Events.InteractionCreate, async (interaction:Interaction) => {
 	if(!interaction.isChatInputCommand()) return;
 	
-	const command = client.commands.get(interaction.commandName)
-	if(!command) {
-		return
-	}
+	console.log("Interaçõa de chat")
+
+	
 
 
 	try {
+		const command = client.commands.get(interaction.commandName)
+		if(!command) {
+			return
+		}
 		await command.execute(interaction, client)
 	} catch(error) {
 		console.error(error);
