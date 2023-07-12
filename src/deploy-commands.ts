@@ -5,7 +5,7 @@ import { CustomCommand } from "./custom";
 
 const { TOKEN, GUILD_ID, CLIENT_ID } = process.env
 const commandsPath = path.join(__dirname, 'commands');
-const commandFiles = fs.readdirSync(commandsPath).filter(file => file.endsWith(".ts"));
+const commandFiles = fs.readdirSync(commandsPath);
 
 const commands = [];
 

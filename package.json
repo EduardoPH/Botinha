@@ -6,7 +6,9 @@
   "license": "MIT",
   "private": false,
   "scripts": {
-    "dev": "nodemon -r dotenv/config && --watch 'src/' --exec 'ts-node-dev src/index.ts' -e ts"
+    "dev": "nodemon -r dotenv/config && --watch 'src/' --exec 'ts-node-dev src/index.ts' -e ts",
+    "build": "tsc",
+    "start": "node -r dotenv/config ./build/index.js"
   },
   "devDependencies": {
     "ts-node-dev": "^2.0.0",
