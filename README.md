@@ -6,11 +6,7 @@ Este projeto objetiva o desenvolvimento de um bot discord com o objetivo de ser 
   <a href="#"><img src="https://img.shields.io/badge/TypeScript-%23007ACC.svg?style=for-the-badge&logo=typescript&logoColor=white"></a>
 </p>
 
-
-
-<p align="center">
   ![Screenshot 2023-07-14 at 07 54 47](https://github.com/EduardoPH/Botinho/assets/88357842/659bf3be-be2a-44cc-af3e-593926d63734)
-</p>
 
 ## Demonstração
 
