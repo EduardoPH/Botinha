@@ -17,8 +17,8 @@ Crie um arquivo chamado .env na pasta raiz do projeto, colocando as informaçõe
 
 Para rodar o projeto, execute os seguintes comandos 
 
-```npm install```
-```npm run build```
+```npm install``` >
+```npm run build``` >
 ```npm start```
 
 Caso queira editar ou melhorar o bot, teste ele rodando esse comando
