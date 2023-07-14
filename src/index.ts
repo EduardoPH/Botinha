@@ -3,6 +3,7 @@ import fs from 'fs';
 import path from 'path';
 import { CustomClient, CustomCommand } from './custom';
 import { deployCommands } from './deploy-commands';
+import { DisTube } from 'distube';
 
 const commandsPath = path.join(__dirname, 'commands');
 const commandFiles = fs.readdirSync(commandsPath);
@@ -10,10 +11,11 @@ const commandFiles = fs.readdirSync(commandsPath);
 const { TOKEN }= process.env
 
 const client = new CustomClient({ intents: [GatewayIntentBits.Guilds, GatewayIntentBits.GuildMessages, GatewayIntentBits.GuildVoiceStates, GatewayIntentBits.GuildIntegrations] });
-
 deployCommands()
 
 client.commands = new Collection();
+client.distube = new DisTube(client, {searchSongs: 1})
+
 
 for (const file of commandFiles) {
 	const filePath = path.join(commandsPath, file);
@@ -34,9 +36,6 @@ client.on(Events.InteractionCreate, async (interaction:Interaction) => {
 	if(!interaction.isChatInputCommand()) return;
 	
 	console.log("Interaçõa de chat")
-
-	
-
 
 	try {
 		const command = client.commands.get(interaction.commandName)

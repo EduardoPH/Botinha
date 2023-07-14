@@ -1,5 +1,5 @@
 import { SlashCommandBuilder, CommandInteraction, EmbedBuilder } from "discord.js";
-import { DisTube, SearchResult, Song } from 'distube';
+import { SearchResult, Song } from 'distube';
 import { CustomClient } from "../custom";
 
 const data = new SlashCommandBuilder()
@@ -25,20 +25,28 @@ async function execute(interaction: CommandInteraction, client: CustomClient) {
   }
   const query = interaction.options.get('query').value;
 
-  const distube = new DisTube(client, { searchSongs: 1 });
 
-  const songs: SearchResult[] = await distube.search(query.toString());
+  const songs: SearchResult[] = await client.distube.search(query.toString());
+
 
 
   await interaction.reply(`Você está conctado em ${memberVoiceChannel.name} e pedinho a musica ${songs[0].name}`)
 
-
   try {
-
-    await distube.play(memberVoiceChannel, songs[0])
+    const song: Song = new Song(songs[0]);
+  
+    const queue = client.distube.getQueue(memberVoiceChannel);
+  
+    if (!queue) {
+      await client.distube.queues.create(memberVoiceChannel, song);
+    } else {
+      await client.distube.getQueue(memberVoiceChannel).addToQueue(song);
+      await interaction.editReply(`O som ${song.name} foi adicionado a fila de ${await client.distube.getQueue(memberVoiceChannel).songs.length} musicas`)
+    }
+  
   } catch (error) {
     console.error(error);
-    await interaction.reply('Ocorreu um erro ao reproduzir a música.');
+    await interaction.editReply('Ocorreu um erro ao reproduzir a música.');
   }
 }
 

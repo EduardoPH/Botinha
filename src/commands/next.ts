@@ -4,8 +4,8 @@ import { DisTube, SearchResult, Song } from 'distube';
 
 
 const data = new SlashCommandBuilder()
-  .setName("pause")
-  .setDescription("Pausa a musica que está tocando no momento");
+  .setName("next")
+  .setDescription("Pula para a próxima musica");
 
 async function execute(interaction: CommandInteraction, client: CustomClient) {
   const userId = interaction.member.user.id;
@@ -22,13 +22,15 @@ async function execute(interaction: CommandInteraction, client: CustomClient) {
   }
 
   try {
-    await client.distube.pause(memberVoiceChannel)
-    await interaction.reply("Musica pausada")
+    await client.distube.skip(memberVoiceChannel)
+    if(!await client.distube.getQueue(memberVoiceChannel).playing)
+      await client.distube.resume(memberVoiceChannel)
 
+    await interaction.reply("Musica pulada")
     
   } catch (error) {
     console.log(error)
-    await interaction.reply("Nao foi possivel pausar")
+    await interaction.reply("Nao foi possivel pular")
   }
 
 
