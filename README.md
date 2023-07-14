@@ -9,8 +9,7 @@ Este projeto objetiva o desenvolvimento de um bot discord com o objetivo de ser 
 
 
 <p align="center">
-  ![image](https://github.com/EduardoPH/Botinho/assets/88357842/85faa58a-1e31-4820-9a9b-720c1266d530)
-
+  ![Screenshot 2023-07-14 at 07 54 47](https://github.com/EduardoPH/Botinho/assets/88357842/659bf3be-be2a-44cc-af3e-593926d63734)
 </p>
 
 ## Demonstração
