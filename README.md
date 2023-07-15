@@ -1,6 +1,6 @@
 # BotDoDudu
 
-Este projeto objetiva o desenvolvimento de um bot discord com o objetivo de ser escalonável e simples de fazer.
+Este projeto objetiva o desenvolvimento de um bot discord com o intuito de ser escalonável e simples de fazer.
 
 <p align="center">
   <a href="#"><img src="https://img.shields.io/badge/TypeScript-%23007ACC.svg?style=for-the-badge&logo=typescript&logoColor=white"></a>
