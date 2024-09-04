@@ -12,7 +12,7 @@ Este projeto objetiva o desenvolvimento de um bot discord com o intuito de ser e
 
 Clone o repositório com ```https://github.com/EduardoPH/Botinho.git``` <br/>
 Crie um arquivo chamado .env na pasta raiz do projeto, colocando as informações da sua aplicação (São encontradas no painel de developers do discord) <br/>
-![Screenshot 2023-07-14 at 20 44 43](https://github.com/EduardoPH/Botinho/assets/88357842/417dbc25-f2e3-4f68-b54a-dd28b141e49b)
+![Screenshot 2023-07-14 at 20 44 43](https://cdn.discordapp.com/app-icons/1218868137894875186/db4eb0b35a5a05a7c524c806eb7abc74.png?size=256&quot)
 
 
 Para rodar o projeto, execute os seguintes comandos 
